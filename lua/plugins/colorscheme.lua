@@ -1,16 +1,13 @@
 return {
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      local hour = tonumber(os.date("%H"))
-      if hour >= 7 and hour <= 18 then
-        vim.cmd.colorscheme("catppuccin-latte")
-      else
-        vim.cmd.colorscheme("catppuccin-mocha")
-      end
-    end
-  }
-}
+{
+  "Mofiqul/vscode.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("vscode").setup({
+      style = "dark", 
+      transparent = true,
+    })
+    vim.cmd([[colorscheme vscode]])
+  end,
+}}

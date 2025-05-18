@@ -11,10 +11,13 @@ return {
     config = function()
       require("nvim-tree").setup({
         view = {
-          width = 30,
-          side = "right",
+          adaptive_size = true,
+          width = 25,
+          side = "left",
         },
         renderer = {
+          root_folder_label=false,
+          indent_width =1,
           icons = {
             show = {
               file = true,
@@ -28,9 +31,8 @@ return {
             resize_window = true,
           },
         },
-      })
+     })
       vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
-      vim.keymap.set("n", "<leader>bf", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Find File in NvimTree" })
     end,
   },
 }

@@ -16,4 +16,6 @@ map("n", "<A-j>", ":m .+1<CR>==", opts)
 map("n", "<A-k>", ":m .-2<CR>==", opts)
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
-
+local goto_def = vim.lsp.buf.definition
+vim.keymap.set("n", "<C-LeftMouse>", goto_def, { silent = true })
+vim.keymap.set("n", "<C-o>", goto_def, { silent = true })
